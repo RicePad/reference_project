@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 # Create your views here.
-def hello(request):
-    return HttpResponse("<h1>HELLO WORLD, WELCOME TO REFERENCE PAGE</h1>")
+class HelloView(TemplateView):
+    template_name = "home.html"
