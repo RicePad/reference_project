@@ -9,3 +9,4 @@ local_settings.py
 db.sqlite3
 /media
 /reference_project/settings.py
+./reference_project/settings.py
