@@ -8,7 +8,7 @@
   <meta name="author" content="">
 
 
-  <title>Jonathan's Blog</title>
+  <title>{{ blog.title }}</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,13 +19,13 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'jobs:job_list' %}">Jonathan</a>
+      <a class="navbar-brand" href="{% url 'jobs:job_list' %}">Jonathan Li</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="http://twitter.com/jonathan">Twitter</a>
+          <a class="nav-item nav-link" href="http://twitter.com/Jonathan">Twitter</a>
           <a class="nav-item nav-link active" href="{% url 'blogs:blog_list' %}">Blog</a>
         </div>
       </div>
@@ -35,20 +35,16 @@
   <main role="main">
     <div class="container">
 
-    <h1 class="text-center pt-3">Welcome to Jonathan's Blog</h1>
-    <br />
-    <br />
-    <h2>Latest Posts</h2>
-    <hr />
 
-    {% for blog in blogs%}
-    <a href="{% url 'blogs:blog_detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
-    {{ blog.pretty_published_date }}
+
+
+    <h1 class="text-center pt-3">{{ blog.title }}</h1>
+    <p class="text-center">{{ blog.published_date }}</p>
+    <img class="img-fluid" src="{{ blog.image.url }}"  />
     <br />
-    <img class="img-fluid" src="{{ blog.image.url }}" height=200 width=200 />
     <br />
-    <p>{{ blog.short_body }}</p>
-    {% endfor %}
+    <p>{{ blog.body }}</p>
+
 
   </div>
 

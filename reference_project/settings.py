@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 MEDIA_DIRECTORY = os.path.join(BASE_DIR, "media")
+STATIC_DIRECTORY = os.path.join(BASE_DIR, "static")
 
 
 
@@ -128,5 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR = [
+    STATIC_DIRECTORY,
+]
+
+
 MEDIA_ROOT = MEDIA_DIRECTORY
 MEDIA_URL = '/media/'

@@ -8,7 +8,7 @@ class Blog(models.Model):
     body = models.TextField()
     image = models.ImageField(upload_to="blog_images/")
 
-    def __self__(self):
+    def __str__(self):
         return self.title
 
     def short_body(self):
