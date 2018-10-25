@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 MEDIA_DIRECTORY = os.path.join(BASE_DIR, "media")
-STATIC_DIRECTORY = os.path.join(BASE_DIR, "static")
+STATIC_DIRECTORY = os.path.join(BASE_DIR, "jobs/static")
 
 
 
