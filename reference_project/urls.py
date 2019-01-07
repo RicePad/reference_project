@@ -20,12 +20,15 @@ from django.conf.urls.static import static
 from blog import views
 from jobs import views
 from reference_project.api import router
+from django.conf.urls import include, url
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
+    path('api/auth/', include('djoser.urls')),
+    path('api/auth/', include('djoser.urls.authtoken')),
     path('', views.find_job_list,name="hello"),
     path('jobs/', include('jobs.urls',namespace="jobs")),
-    path("blogs/", include("blog.urls", namespace="blogs"))
+    path("blogs/", include("blog.urls", namespace="blogs")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
