@@ -19,10 +19,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from blog import views
 from jobs import views
+from reference_project.api import router
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/', include(router.urls)),
     path('', views.find_job_list,name="hello"),
     path('jobs/', include('jobs.urls',namespace="jobs")),
     path("blogs/", include("blog.urls", namespace="blogs"))
