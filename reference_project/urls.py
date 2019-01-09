@@ -26,7 +26,6 @@ from django.conf.urls import include, url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
-    path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.authtoken')),
     path('', views.find_job_list,name="hello"),
     path('jobs/', include('jobs.urls',namespace="jobs")),
